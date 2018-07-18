@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Technology Today</string>
+    <string name="name_placeholder">By: Hellen Mirren</string>
+    <string name="date_placeholder">17.01.2018</string>
+    <string name="title_placeholder">Very long title that would need to be cut because we can only have 1 line in title</string>
+    <string name="time_placeholder">16:01</string>
+    <string name="text_placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="read_more">Click to read more...</string>
+    <string name="category_placeholder">#technology</string>
+    <string name="empty_text">No news could be loaded.</string>
+    <string name="no_internet">No internet connection</string>
+</resources>
