@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (data != null && !data.isEmpty()) {
+            mEmptyStateTextView.setVisibility(View.GONE);
             mAdapter.addAll(data);
         }
     }

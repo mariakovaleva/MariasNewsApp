@@ -32,13 +32,13 @@ public class QueryTools {
     /**
      * Tag for the log messages
      */
-    public static final String LOG_TAG = QueryTools.class.getSimpleName();
+    private static final String LOG_TAG = QueryTools.class.getSimpleName();
 
     /**
      * Builds our query URL for dynamic change in query date
      * Fetch all technology news stories starting from yesterday
      */
-    public static String urlBuilder() {
+    private static String urlBuilder() {
         StringBuilder builder = new StringBuilder();
 
         String baseUrl = "https://content.guardianapis.com/search?section=technology&from-date=";
@@ -72,12 +72,8 @@ public class QueryTools {
             Log.e(LOG_TAG, "Error closing input stream", e);
         }
 
-
         // Extract relevant fields from the JSON response and create a list of {@link News}
-        List<News> newsList = extractNews(jsonResponse);
-
-        // Return the list of {@link Earthquake}s
-        return newsList;
+        return extractNews(jsonResponse);
 
     }
 
@@ -109,8 +105,8 @@ public class QueryTools {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(2000 /* milliseconds */);
-            urlConnection.setConnectTimeout(3000 /* milliseconds */);
+            urlConnection.setReadTimeout(10000 /* milliseconds */);
+            urlConnection.setConnectTimeout(15000 /* milliseconds */);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
