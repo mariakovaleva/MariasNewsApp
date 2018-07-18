@@ -10,7 +10,9 @@ import java.util.List;
 
 public class NewsLoader extends AsyncTaskLoader<List<News>> {
 
-    /** Tag for log messages */
+    /**
+     * Tag for log messages
+     */
     private static final String LOG_TAG = NewsLoader.class.getName();
 
     public NewsLoader(Context context) {
@@ -29,8 +31,8 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
 
         try {
             // Perform the network request, parse the response, and extract a list of news.
-          results = QueryTools.fetchNews();
-        } catch(Exception e) {
+            results = QueryTools.fetchNews();
+        } catch (Exception e) {
             e.printStackTrace();
             Log.e(LOG_TAG, "Failed to load in background");
         }

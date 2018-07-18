@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="dateAndTimeText">
+        <item name="android:textColor">@color/textColorNewsDateAndTime</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="readMoreText">
+        <item name="android:textColor">@color/textReadMore</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="titleText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_text</item>
+    </style>
+
+    <style name="mainText">
+        <item name="android:textSize">@dimen/main_text</item>
+    </style>
+
 </resources>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Technology Today</string>
-    <string name="name_placeholder">By: Hellen Mirren</string>
+    <string name="name_placeholder">Hellen Mirren</string>
     <string name="date_placeholder">17.01.2018</string>
     <string name="title_placeholder">Very long title that would need to be cut because we can only have 1 line in title</string>
     <string name="time_placeholder">16:01</string>

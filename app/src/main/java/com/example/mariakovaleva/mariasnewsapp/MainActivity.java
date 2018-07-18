@@ -3,18 +3,17 @@ package com.example.mariakovaleva.mariasnewsapp;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,24 +21,21 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>>, SwipeRefreshLayout.OnRefreshListener {
 
     /**
+     * Constant value for the news loader.
+     */
+    private static final int NEWS_LOADER_ID = 1;
+    /**
      * Adapter for the list of news stories
      */
     private NewsAdapter mAdapter;
-
     /**
      * Implementing the "pull to update" gesture
      */
     private SwipeRefreshLayout mSwipeView;
-
     /**
      * TextView that is displayed when the list is empty
      */
     private TextView mEmptyStateTextView;
-
-    /**
-     * Constant value for the news loader.
-     */
-    private static final int NEWS_LOADER_ID = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         mEmptyStateTextView = (TextView) findViewById(R.id.empty);
         newsListView.setEmptyView(mEmptyStateTextView);
+
+        // Populating the {@link ListView} in the user interface
+        newsListView.setAdapter(mAdapter);
 
 
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -104,11 +103,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onRefresh() {
-    new Handler().postDelayed(new Runnable() {
-        @Override
-        public void run() {
-            mSwipeView.setRefreshing(false);
-        }
-    }, 5000);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeView.setRefreshing(false);
+            }
+        }, 5000);
     }
 }

@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/top_margin"
+    android:layout_marginLeft="@dimen/left_margin"
+    android:layout_marginRight="@dimen/top_margin"
+    android:layout_marginStart="@dimen/left_margin"
+    android:layout_marginTop="@dimen/top_margin"
     tools:context=".MainActivity">
 
     <!-- Progress bar for when updating the list of stories -->
     <android.support.v4.widget.SwipeRefreshLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/swiperefresh"
-        >
-
-    <!-- Layout for a list of news stories -->
-    <ListView
-        android:id="@+id/news_stories_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:orientation="vertical"
-        />
+        android:layout_height="match_parent">
+
+        <!-- Layout for a list of news stories -->
+        <ListView
+            android:id="@+id/news_stories_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:orientation="vertical" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

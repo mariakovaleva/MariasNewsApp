@@ -3,4 +3,7 @@
     <dimen name="left_margin">16dp</dimen>
     <dimen name="inner_margin">4dp</dimen>
     <dimen name="top_margin">8dp</dimen>
+    <dimen name="story_margin">24dp</dimen>
+    <dimen name="title_text">16sp</dimen>
+    <dimen name="main_text">14sp</dimen>
 </resources>

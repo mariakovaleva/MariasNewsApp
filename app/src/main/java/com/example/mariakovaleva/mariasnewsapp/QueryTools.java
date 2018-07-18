@@ -24,15 +24,15 @@ import java.util.List;
 public class QueryTools {
 
     /**
+     * Tag for the log messages
+     */
+    private static final String LOG_TAG = QueryTools.class.getSimpleName();
+
+    /**
      * Private constructor to prevent from creating a {@link QueryTools} object
      */
     private QueryTools() {
     }
-
-    /**
-     * Tag for the log messages
-     */
-    private static final String LOG_TAG = QueryTools.class.getSimpleName();
 
     /**
      * Builds our query URL for dynamic change in query date
@@ -169,10 +169,10 @@ public class QueryTools {
         try {
             JSONObject jsonRootObject = new JSONObject(jsonResponse);
             JSONObject responseObject = jsonRootObject.optJSONObject("response");
-            JSONArray resultsArray  = responseObject.optJSONArray("results");
+            JSONArray resultsArray = responseObject.optJSONArray("results");
 
-            for (int i = 0; i < resultsArray .length(); i++){
-                JSONObject newsObject = resultsArray .getJSONObject(i);
+            for (int i = 0; i < resultsArray.length(); i++) {
+                JSONObject newsObject = resultsArray.getJSONObject(i);
 
                 JSONArray tagsArray = newsObject.optJSONArray("tags");
                 String authorName = "";

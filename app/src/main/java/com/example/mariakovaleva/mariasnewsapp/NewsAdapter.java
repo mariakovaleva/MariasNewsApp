@@ -1,7 +1,6 @@
 package com.example.mariakovaleva.mariasnewsapp;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -14,12 +13,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class NewsAdapter extends ArrayAdapter<News>{
-
-    private View listItemView;
+public class NewsAdapter extends ArrayAdapter<News> {
 
     private static final String DATE_SEPARATOR = "T";
     private static final String TIME_SEPARATOR = "Z";
+    private View listItemView;
 
     public NewsAdapter(@NonNull Activity context, ArrayList<News> newsArrayList) {
         super(context, 0, newsArrayList);
@@ -64,16 +62,16 @@ public class NewsAdapter extends ArrayAdapter<News>{
                 getContext().startActivity(intent);
             }
         });
-            return listItemView;
-            }
+        return listItemView;
+    }
 
-        private String getDate(String dateAndTime) {
+    private String getDate(String dateAndTime) {
         return dateAndTime.substring(0, dateAndTime.indexOf(DATE_SEPARATOR));
-        }
+    }
 
-        private String getTime(String dateAndTime) {
-        return dateAndTime.substring(dateAndTime.indexOf(DATE_SEPARATOR),
-                dateAndTime.indexOf(TIME_SEPARATOR) - 4);
-        }
+    private String getTime(String dateAndTime) {
+        return dateAndTime.substring(dateAndTime.indexOf(DATE_SEPARATOR) + 1,
+                dateAndTime.indexOf(TIME_SEPARATOR) - 3);
+    }
 
 }

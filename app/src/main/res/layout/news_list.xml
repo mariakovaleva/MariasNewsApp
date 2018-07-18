@@ -1,100 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:layout_marginLeft="@dimen/left_margin"
-    android:layout_marginStart="@dimen/left_margin"
-    android:layout_marginBottom="@dimen/inner_margin"
-    android:layout_marginTop="@dimen/top_margin"
+
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginBottom="@dimen/inner_margin"
-        >
+        android:orientation="horizontal">
 
         <TextView
-        android:layout_width="0dp"
-        android:layout_weight="3"
-        android:layout_height="wrap_content"
             android:id="@+id/author_name_text_view"
-            tools:text="@string/name_placeholder"
-            />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            tools:text="@string/name_placeholder" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
             android:id="@+id/date_text_view"
-            tools:text="@string/date_placeholder"
-            android:gravity="right"/>
+            style="@style/dateAndTimeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="@string/date_placeholder" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
             android:id="@+id/title_text_view"
-            tools:text="@string/title_placeholder"
-            android:maxLines="1"
-            android:ellipsize="end"/>
+            style="@style/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="@string/title_placeholder" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
             android:id="@+id/time_text_view"
-            tools:text="@string/time_placeholder"
-            android:gravity="right"
-            />
+            style="@style/dateAndTimeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="@string/time_placeholder" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text_text_view"
+        style="@style/mainText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_text_view"
-        android:maxLines="4"
+        android:layout_marginTop="@dimen/top_margin"
         android:ellipsize="end"
-        android:text="@string/text_placeholder"
-        android:layout_marginTop="@dimen/top_margin"/>
+        android:maxLines="4"
+        android:text="@string/text_placeholder" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/top_margin">
+        android:layout_marginBottom="@dimen/story_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_action_globe"/>
+            android:src="@drawable/ic_action_globe" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
             android:id="@+id/read_more_text_view"
-            tools:text="@string/read_more"/>
+            style="@style/readMoreText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/read_more" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
             android:id="@+id/category_text_view"
-            tools:text="@string/category_placeholder"
-            />
+            style="@style/dateAndTimeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="@string/category_placeholder" />
 
     </LinearLayout>
 
