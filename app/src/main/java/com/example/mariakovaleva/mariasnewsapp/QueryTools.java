@@ -1,5 +1,6 @@
 package com.example.mariakovaleva.mariasnewsapp;
 
+import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -29,6 +30,12 @@ public class QueryTools {
     private static final String LOG_TAG = QueryTools.class.getSimpleName();
 
     /**
+     * This parameters ase used in app preferences
+     */
+    public static String QUERY_ORDER_BY_PARAMETER = "";
+    public static String QUERY_DATE_PARAMETER = "";
+
+    /**
      * Private constructor to prevent from creating a {@link QueryTools} object
      */
     private QueryTools() {
@@ -38,23 +45,31 @@ public class QueryTools {
      * Builds our query URL for dynamic change in query date
      * Fetch all technology news stories starting from yesterday
      */
-    private static String urlBuilder() {
-        StringBuilder builder = new StringBuilder();
+    public static String urlBuilder() {
 
-        String baseUrl = "https://content.guardianapis.com/search?section=technology&from-date=";
+        Uri baseUri = Uri.parse("https://content.guardianapis.com/search");
 
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("section", "technology");
+        uriBuilder.appendQueryParameter("from-date", QUERY_DATE_PARAMETER);
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter("show-fields", "trailText");
+        uriBuilder.appendQueryParameter("order-by", QUERY_ORDER_BY_PARAMETER);
+        uriBuilder.appendQueryParameter("api-key", BuildConfig.MyAPIToken);
+
+        Log.v(LOG_TAG, uriBuilder.toString());
+
+        return uriBuilder.toString();
+    }
+
+    //Default loading date for news stories is yesterday
+    public static String defaultDateQueryParam() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE, -1);
         Date yesterday = calendar.getTime();
-        String formattedYesterday = dateFormat.format(yesterday);
-
-        builder.append(baseUrl);
-        builder.append(formattedYesterday);
-        builder.append("&show-tags=contributor&show-fields=trailText");
-        builder.append(BuildConfig.MyAPIToken);
-
-        return builder.toString();
+        return dateFormat.format(yesterday);
     }
 
     /**
