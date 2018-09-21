@@ -1,5 +1,5 @@
 # MariasNewsApp
-Fifth Udacity project (displaying news articles on the topic of technology)
+Sixth Udacity project (displaying news articles on the topic of technology)
 
 App contains a main screen which displays multiple news stories. App queries the content.guardianapis.com API to fetch news stories related to the topic "technology". Networking operations are done using a Loader.
 
